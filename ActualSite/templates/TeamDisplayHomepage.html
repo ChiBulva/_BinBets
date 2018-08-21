@@ -1,0 +1,35 @@
+<!doctype html>
+
+<title>PikaPedia</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./styles/TeamDisplayHomePage.css') }}">
+<input type="hidden" name="query" value="query">
+
+
+<body style="background-color: black;">
+	{% for team1, team2 in Games.items() %}
+	<div class="gameCard" style="background-color: gray;">
+			<div class="column" class="centered">
+				<div class="centered">
+					<img src="static/images/TeamsLogos/{{team1}}.gif" alt="{{team1}}" class="image">
+				</div>
+				<div style="color: white" class="centered">
+					{{team1}}
+				</div>
+				<div style="color: white" class="centered">
+					{{hashArray}}
+				</div>
+			</div>
+			<div class="column">
+				<div class="centered">
+					<img src="static/images/TeamsLogos/{{team2}}.gif" alt="{{team2}}" class="image">
+				</div>
+				<div style="color: white" class="centered">
+					{{team2}}
+				</div>
+				<div style="color: white" class="centered">
+					{{hashArray}}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+<body>
